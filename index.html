@@ -1,0 +1,1118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vastukala Architect | Baran Rajasthan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --gold: #bd9853;
+    --light-gold: #e6d1a5;
+    --dark: #191714;
+    --cream: #faf8f3;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+h1,h2,h3 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid #eee5d5;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 29px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+.logo span {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav a {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.menu-btn {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 100vh;
+    padding: 150px 8% 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.18)),
+    url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800')
+    center/cover;
+    color: white;
+}
+
+.hero-content {
+    max-width: 750px;
+    animation: slideUp 1.2s ease;
+}
+
+.eyebrow {
+    color: var(--light-gold);
+    letter-spacing: 5px;
+    font-size: 11px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(55px,8vw,100px);
+    line-height: .95;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--light-gold);
+    font-style: italic;
+}
+
+.hero p {
+    max-width: 550px;
+    font-size: 13px;
+    line-height: 2.1;
+    color: #eee;
+    margin-bottom: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 30px;
+    background: var(--gold);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: 1px solid var(--gold);
+    transition: .4s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--gold);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: white;
+    margin-left: 12px;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--dark);
+}
+
+section {
+    padding: 110px 8%;
+}
+
+.section-label {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 5px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-size: clamp(40px,5vw,65px);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.section-title span {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+    background: white;
+}
+
+.about-img img {
+    width: 100%;
+    height: 510px;
+    object-fit: cover;
+}
+
+.about-text p {
+    color: #777;
+    font-size: 13px;
+    line-height: 2.2;
+    margin: 20px 0;
+}
+
+.gold-line {
+    height: 2px;
+    width: 70px;
+    background: var(--gold);
+    margin: 25px 0;
+}
+
+.services {
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    margin-top: 55px;
+}
+
+.service-card {
+    padding: 50px 25px;
+    background: white;
+    border: 1px solid #eee8dc;
+    transition: .4s;
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 40px #0000000d;
+    border-color: var(--gold);
+}
+
+.service-icon {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #888;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.works {
+    background: white;
+    text-align: center;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+    margin-top: 50px;
+}
+
+.work-card {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+    background: #eee;
+}
+
+.work-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .7s;
+}
+
+.work-card:hover img {
+    transform: scale(1.1);
+}
+
+.work-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 30px 15px 20px;
+    text-align: left;
+    color: white;
+    background: linear-gradient(transparent,rgba(0,0,0,.8));
+}
+
+.work-info h3 {
+    font-size: 25px;
+}
+
+.work-info p {
+    font-size: 10px;
+    color: var(--light-gold);
+    letter-spacing: 2px;
+}
+
+.empty-gallery {
+    grid-column: 1/-1;
+    padding: 50px;
+    color: #888;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.contact {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+}
+
+.contact .section-title {
+    color: white;
+}
+
+.contact p {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+
+.contact-buttons {
+    margin: 30px 0 50px;
+}
+
+.map-container {
+    max-width: 950px;
+    margin: auto;
+    border: 3px solid var(--gold);
+    height: 350px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+footer {
+    background: #111;
+    color: #aaa;
+    padding: 30px 8%;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+footer span {
+    color: var(--gold);
+}
+
+/* OWNER DASHBOARD */
+
+.owner-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--gold);
+    color: white;
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    z-index: 1001;
+    font-size: 19px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px #0003;
+}
+
+.dashboard {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: #000a;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.dashboard-box {
+    background: white;
+    width: 100%;
+    max-width: 650px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 35px;
+    position: relative;
+    border-top: 5px solid var(--gold);
+}
+
+.dashboard h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.dashboard input {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    outline-color: var(--gold);
+    font-family: inherit;
+}
+
+.dashboard label {
+    display: block;
+    margin-top: 18px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.dashboard .btn {
+    margin-top: 15px;
+}
+
+.close-dashboard {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #888;
+}
+
+#adminPanel {
+    display: none;
+}
+
+.admin-work {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.admin-work img {
+    width: 65px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.delete-btn {
+    margin-left: auto;
+    background: #a83232;
+    border: 0;
+    color: white;
+    padding: 9px 12px;
+    cursor: pointer;
+}
+
+.status {
+    font-size: 12px;
+    color: var(--gold);
+    margin-top: 12px;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: .8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(35px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width:800px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 25px;
+        flex-direction: column;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .services-grid,.works-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero {
+        min-height: 85vh;
+    }
+}
+
+@media(max-width:500px) {
+    .services-grid,.works-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 75px 6%;
+    }
+
+    .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .btn {
+        padding: 14px 18px;
+        font-size: 9px;
+    }
+
+    .dashboard-box {
+        padding: 25px 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="#" class="logo">
+        VASTUKALA
+        <span>ARCHITECT</span>
+    </a>
+
+    <nav id="nav">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#services">SERVICES</a>
+        <a href="#works">OUR WORKS</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="eyebrow">DESIGN • INNOVATION • EXCELLENCE</div>
+
+        <h1>
+            Designing<br>
+            Spaces.<br>
+            <span>Creating Dreams.</span>
+        </h1>
+
+        <p>
+            Welcome to Vastukala Architect Baran.
+            We transform ideas into extraordinary spaces
+            through innovative architecture, elegant design
+            and attention to every detail.
+        </p>
+
+        <a href="#works" class="btn">EXPLORE OUR WORK</a>
+        <a href="#contact" class="btn btn-outline">CONTACT US</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="about reveal" id="about">
+
+    <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1000"
+        alt="Modern architectural interior">
+    </div>
+
+    <div class="about-text">
+        <div class="section-label">ABOUT OUR FIRM</div>
+
+        <h2 class="section-title">
+            Architecture<br>
+            With <span>Purpose.</span>
+        </h2>
+
+        <div class="gold-line"></div>
+
+        <p>
+            Vastukala Architect Baran is a professional
+            architectural and design firm offering innovative,
+            functional and customized solutions for residential
+            and commercial spaces.
+        </p>
+
+        <p>
+            Our vision is to create beautiful, meaningful
+            and functional spaces that reflect the personality
+            and aspirations of our clients.
+        </p>
+
+        <a href="#contact" class="btn">LET'S DISCUSS YOUR PROJECT</a>
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services reveal" id="services">
+
+    <div class="section-label">WHAT WE OFFER</div>
+
+    <h2 class="section-title">
+        Our <span>Services</span>
+    </h2>
+
+    <p style="color:#888;font-size:12px;">
+        Thoughtful design. Exceptional execution.
+    </p>
+
+    <div class="services-grid">
+
+        <div class="service-card">
+            <div class="service-icon">⌂</div>
+            <h3>Architecture</h3>
+            <p>
+                Innovative architectural planning and
+                designs tailored to your vision.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">✧</div>
+            <h3>Interior Design</h3>
+            <p>
+                Elegant and functional interiors
+                designed with attention to detail.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">◇</div>
+            <h3>3D Elevation</h3>
+            <p>
+                Beautiful 3D visualizations to bring
+                your architectural ideas to life.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">▤</div>
+            <h3>Floor Planning</h3>
+            <p>
+                Smart and practical floor plans
+                designed around your requirements.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">⌂</div>
+            <h3>Residential Design</h3>
+            <p>
+                Personalized home designs that
+                combine comfort and aesthetics.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">✦</div>
+            <h3>Commercial Design</h3>
+            <p>
+                Modern commercial spaces that
+                combine functionality and style.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- OUR WORKS -->
+
+<section class="works reveal" id="works">
+
+    <div class="section-label">OUR PORTFOLIO</div>
+
+    <h2 class="section-title">
+        Our <span>Works</span>
+    </h2>
+
+    <p style="color:#888;font-size:12px;">
+        A glimpse of our architectural creativity.
+    </p>
+
+    <div class="works-grid" id="worksGrid">
+        <div class="empty-gallery">
+            Our latest projects will be displayed here.
+        </div>
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact reveal" id="contact">
+
+    <div class="section-label">GET IN TOUCH</div>
+
+    <h2 class="section-title">
+        Let's Build Something <span>Beautiful.</span>
+    </h2>
+
+    <p>
+        Have a project in mind? Let's discuss your ideas
+        and turn your vision into reality.
+        <br><br>
+        Vastukala Architect, Near Deendayal Park Road,
+        Lanka Colony, Baran, Rajasthan 325205.
+    </p>
+
+    <div class="contact-buttons">
+        <a href="tel:8821913808" class="btn">
+            CALL US
+        </a>
+
+        <a href="https://wa.me/918821913808"
+        target="_blank" class="btn btn-outline">
+            WHATSAPP
+        </a>
+    </div>
+
+    <div class="map-container">
+        <iframe
+        src="https://maps.google.com/maps?q=Vastukala%20Architect%20Baran%20Rajasthan&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        loading="lazy"
+        allowfullscreen>
+        </iframe>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 <span>VASTUKALA ARCHITECT</span> |
+    ALL RIGHTS RESERVED
+</footer>
+
+<!-- OWNER BUTTON -->
+
+<div class="owner-link" onclick="openDashboard()" title="Owner Dashboard">
+    ♙
+</div>
+
+<!-- OWNER DASHBOARD -->
+
+<div class="dashboard" id="dashboard">
+
+    <div class="dashboard-box">
+
+        <div class="close-dashboard" onclick="closeDashboard()">×</div>
+
+        <h2>Owner Dashboard</h2>
+
+        <p style="font-size:12px;color:#888;margin-bottom:20px;">
+            Manage your projects and portfolio.
+        </p>
+
+        <!-- LOGIN -->
+
+        <div id="loginPanel">
+
+            <label>OWNER PASSWORD</label>
+
+            <input type="password" id="password"
+            placeholder="Enter dashboard password">
+
+            <button class="btn" onclick="login()">
+                LOGIN TO DASHBOARD
+            </button>
+
+            <p id="loginMessage" class="status"></p>
+
+        </div>
+
+        <!-- ADMIN PANEL -->
+
+        <div id="adminPanel">
+
+            <div class="gold-line"></div>
+
+            <h3 style="font-size:26px;">Add New Project</h3>
+
+            <label>PROJECT NAME</label>
+
+            <input type="text" id="projectName"
+            placeholder="Example: Luxury Residence">
+
+            <label>PROJECT IMAGE</label>
+
+            <input type="file" id="projectImage"
+            accept="image/*">
+
+            <button class="btn" onclick="addProject()">
+                UPLOAD PROJECT
+            </button>
+
+            <p class="status" id="uploadMessage"></p>
+
+            <div class="gold-line"></div>
+
+            <h3 style="font-size:26px;">Manage Projects</h3>
+
+            <div id="adminWorks"></div>
+
+            <button class="btn"
+            style="background:#333;border-color:#333;"
+            onclick="logout()">
+                LOGOUT
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+// NAVIGATION
+
+function toggleMenu() {
+    document.getElementById("nav").classList.toggle("show");
+}
+
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("nav").classList.remove("show");
+    });
+});
+
+// SCROLL ANIMATIONS
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add("active");
+        }
+    });
+}, {threshold: 0.12});
+
+document.querySelectorAll(".reveal").forEach(el => {
+    observer.observe(el);
+});
+
+// DASHBOARD
+
+const OWNER_PASSWORD = "vastukala2026";
+
+function openDashboard() {
+    document.getElementById("dashboard").style.display = "flex";
+}
+
+function closeDashboard() {
+    document.getElementById("dashboard").style.display = "none";
+}
+
+function login() {
+
+    const enteredPassword =
+    document.getElementById("password").value;
+
+    if(enteredPassword === OWNER_PASSWORD) {
+
+        document.getElementById("loginPanel").style.display = "none";
+        document.getElementById("adminPanel").style.display = "block";
+
+        showAdminWorks();
+
+    } else {
+
+        document.getElementById("loginMessage").textContent =
+        "Incorrect password. Please try again.";
+
+    }
+}
+
+function logout() {
+
+    document.getElementById("loginPanel").style.display = "block";
+    document.getElementById("adminPanel").style.display = "none";
+    document.getElementById("password").value = "";
+    document.getElementById("loginMessage").textContent = "";
+
+}
+
+// PROJECT STORAGE
+
+function getProjects() {
+
+    return JSON.parse(
+        localStorage.getItem("vastukalaProjects") || "[]"
+    );
+
+}
+
+function saveProjects(projects) {
+
+    localStorage.setItem(
+        "vastukalaProjects",
+        JSON.stringify(projects)
+    );
+
+}
+
+// ADD PROJECT
+
+function addProject() {
+
+    const name =
+    document.getElementById("projectName").value.trim();
+
+    const file =
+    document.getElementById("projectImage").files[0];
+
+    const message =
+    document.getElementById("uploadMessage");
+
+    if(!name || !file) {
+        message.textContent =
+        "Please enter a project name and select an image.";
+        return;
+    }
+
+    if(!file.type.startsWith("image/")) {
+        message.textContent = "Please select a valid image.";
+        return;
+    }
+
+    if(file.size > 2 * 1024 * 1024) {
+        message.textContent =
+        "Image is too large. Please choose an image under 2 MB.";
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+
+        const projects = getProjects();
+
+        projects.push({
+            id: Date.now(),
+            name: name,
+            image: e.target.result
+        });
+
+        try {
+
+            saveProjects(projects);
+
+            document.getElementById("projectName").value = "";
+            document.getElementById("projectImage").value = "";
+
+            message.textContent = "Project uploaded successfully!";
+
+            displayProjects();
+            showAdminWorks();
+
+        } catch(error) {
+
+            message.textContent =
+            "Storage full. Try a smaller image or fewer projects.";
+
+        }
+
+    };
+
+    reader.readAsDataURL(file);
+
+}
+
+// DISPLAY PROJECTS ON WEBSITE
+
+function displayProjects() {
+
+    const projects = getProjects();
+
+    const grid = document.getElementById("worksGrid");
+
+    if(projects.length === 0) {
+
+        grid.innerHTML = `
+            <div class="empty-gallery">
+                Our latest projects will be displayed here.
+            </div>
+        `;
+
+        return;
+    }
+
+    grid.innerHTML = projects.map(project => `
+
+        <div class="work-card">
+
+            <img src="${project.image}" alt="Project image">
+
+            <div class="work-info">
+                <h3>${escapeHTML(project.name)}</h3>
+                <p>VASTUKALA ARCHITECT</p>
+            </div>
+
+        </div>
+
+    `).join("");
+
+}
+
+// SAFE TEXT DISPLAY
+
+function escapeHTML(text) {
+
+    return String(text).replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+    })[char]);
+
+}
+
+// ADMIN PROJECT MANAGEMENT
+
+function showAdminWorks() {
+
+    const projects = getProjects();
+
+    const container =
+    document.getElementById("adminWorks");
+
+    if(projects.length === 0) {
+
+        container.innerHTML =
+        "<p class='status'>No projects uploaded yet.</p>";
+
+        return;
+    }
+
+    container.innerHTML = projects.map(project => `
+
+        <div class="admin-work">
+
+            <img src="${project.image}" alt="">
+
+            <span style="font-size:12px;font-weight:600;">
+                ${escapeHTML(project.name)}
+            </span>
+
+            <button class="delete-btn"
+            onclick="deleteProject(${project.id})">
+                DELETE
+            </button>
+
+        </div>
+
+    `).join("");
+
+}
+
+// DELETE PROJECT
+
+function deleteProject(id) {
+
+    if(!confirm("Are you sure you want to delete this project?")) {
+        return;
+    }
+
+    const projects = getProjects().filter(
+        project => project.id !== id
+    );
+
+    saveProjects(projects);
+
+    displayProjects();
+    showAdminWorks();
+
+}
+
+// INITIAL LOAD
+
+displayProjects();
+
+</script>
+
+</body>
+</html>
